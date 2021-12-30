@@ -1,0 +1,28 @@
+spring:
+   application:
+      name: AsyncConsumer
+   profiles:
+      include: rabbitmq-setup-props, executors-props, producer-props
+      #, datasource-props
+   boot:
+      admin:
+         client:
+            url: http://localhost:9000
+logging:
+   level:
+      Root: INFO
+      org.springframework.web.filter.CommonsRequestLoggingFilter: INFO
+      com.zaxxer.hikari.HikariConfig: INFO
+      com.zaxxer.hikari.pool.HikariPool: DEBUG
+management:
+   server:
+      port: 8085
+      ssl:
+         enabled: false
+   endpoints:
+      web:
+         base-path: /actuator
+         exposure:
+            include: '*'
+server:
+   port: 8085

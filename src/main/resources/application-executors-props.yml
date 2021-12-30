@@ -1,0 +1,26 @@
+jmuscles:
+   executors-config:
+      restConfig:
+         connectionTimeout: 10000
+         readTimeout: 10000
+      restCalls:
+         test:
+            url: http://localhost:8080/place/list/IN
+            successCodePatterns:
+               200: null
+         GET_DEMO_USER:
+            url: https://gorest.co.in/public/v1/users
+            successCodePatterns:
+               200: null
+      sqlProcedures:
+         demo_proc_1:
+            dskey: null
+            procedure: procedure_name
+            successKey: P_RESP_CODE
+            successValue: '000'
+      sqlQueries:
+         insert_user_testdb:
+            dskey: testdb
+            query: insert into test.user(user_id, first_name, last_name, email, gender) values(:user_id, :first_name, :last_name,
+               :email, :gender);
+            successResponse: null

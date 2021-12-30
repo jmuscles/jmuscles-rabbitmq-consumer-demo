@@ -1,0 +1,36 @@
+jmuscles:
+   db-properties:
+     connections:
+       asyncdb:
+         driverClassName: com.mysql.cj.jdbc.Driver
+         jdbcUrl: jdbc:mysql://localhost:3306/async-db
+         username: root
+         password: password
+         #jasypt-password:  
+         #jasypt-algorithm:
+       testdb:
+         driverClassName: com.mysql.cj.jdbc.Driver
+         jdbcUrl: jdbc:mysql://localhost:3306/test
+         username: root
+         password: password
+         #jasypt-password:  
+         #jasypt-algorithm:         
+     dataSources:
+       asyncdb:
+         type: hikari
+         connectionPropsKey: asyncdb
+         connectionPoolProperties:
+           poolName: 
+           minimumIdle: 1
+           maximumPoolSize: 5 
+           maxLifetime: 0
+           connectionTimeout: 180000  
+       testdb:
+         type: hikari
+         connectionPropsKey: testdb
+         connectionPoolProperties:
+           poolName: 
+           minimumIdle: 1
+           maximumPoolSize: 5 
+           maxLifetime: 0
+           connectionTimeout: 180000                     

@@ -1,0 +1,50 @@
+spring:
+   rabbitmq:
+      host: localhost
+      port: 5672
+      username: guest
+      password: guest
+      
+rabbitmq-config:
+   exchanges:
+   -  name: EXCHANGE_1
+      type: direct
+      parent: null
+      rabbitTemplateId: template1
+   queueSetsConfig:
+      demoQueueSetConfig:
+         exchange: EXCHANGE_1
+         name: DEMO_QUEUE
+         retrySetupDisabled: false
+         arguments:
+            primary:
+               -x-queue-type: quorum
+            retry:
+               -x-queue-type: quorum
+            abandoned:
+               -x-queue-type: quorum
+   queueSetsProcessingConfig:
+      demoQueueSetConfig:
+         primary:
+            disableProcessing: false
+            listenerType: RequeueModifiedMessageListener
+            concurrency: 1-5
+            processor: asyncPayloadMessageProcessor
+         retry:
+            disableProcessing: false
+            listenerType: RequeueModifiedMessageListener
+            concurrency: 1-5
+            processor: asyncPayloadMessageProcessor
+            retryOnlyConfig:
+               acceptingMessage: true
+               retryAttempt: 2
+               retryAfterDelay: true
+               retryInterval:
+                  - 300
+                  - 600
+                  - 1200
+         abandoned:
+            disableProcessing: true
+            listenerType: RequeueModifiedMessageListener
+            concurrency: 1-5
+            processor: persistMessageToDBProcessor
