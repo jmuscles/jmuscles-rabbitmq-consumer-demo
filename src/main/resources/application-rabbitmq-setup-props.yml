@@ -10,7 +10,6 @@ rabbitmq-config:
    -  name: EXCHANGE_1
       type: direct
       parent: null
-      rabbitTemplateId: template1
    queueSetsConfig:
       demoQueueSetConfig:
          exchange: EXCHANGE_1
