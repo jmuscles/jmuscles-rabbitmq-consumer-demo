@@ -1,0 +1,38 @@
+{
+    "requestDataList": [
+        {
+            "@type": "rest",
+            "method": "GET",
+            "configKey": "getDemoUser",
+            "urlSuffix": "/123",
+            "body": null,
+            "httpHeader": {
+                "key1": "value1",
+                "key2": "value2",
+                "key3": "value3"
+            }
+        },
+        {
+            "@type": "sql-query",
+            "params": {
+                "gender": "Male",
+                "user_id": "1",
+                "last_name": "Goel",
+                "first_name": "Manish",
+                "email": "a@a.com"
+            },
+            "configKey": "sql-query-congifg-key"
+        },
+        {
+            "@type": "sql-procedure",
+            "params": {
+                "gender": "Male",
+                "user_id": "1",
+                "last_name": "Goel",
+                "first_name": "Manish",
+                "email": "a@a.com"
+            },
+            "configKey": "sql-procedure-congifg-key"
+        }		
+    ]
+}

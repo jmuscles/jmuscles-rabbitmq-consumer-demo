@@ -8,10 +8,15 @@ jmuscles:
             url: http://localhost:8080/place/list/IN
             successCodePatterns:
                200: null
-         GET_DEMO_USER:
+         getDemoUser:
             url: https://gorest.co.in/public/v1/users
             successCodePatterns:
                200: null
+         createDemoUser:
+            url: https://gorest.co.in/public/v1/users
+            successCodePatterns:
+               200: null
+               401: null
       sqlProcedures:
          demo_proc_1:
             dskey: null

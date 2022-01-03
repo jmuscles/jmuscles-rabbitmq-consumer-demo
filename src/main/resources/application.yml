@@ -14,6 +14,8 @@ logging:
       org.springframework.web.filter.CommonsRequestLoggingFilter: INFO
       com.zaxxer.hikari.HikariConfig: INFO
       com.zaxxer.hikari.pool.HikariPool: DEBUG
+   pattern:
+      console: "%d [%thread] %-5level %logger{36} - %msg %mdc%n"   
 management:
    server:
       port: 8085

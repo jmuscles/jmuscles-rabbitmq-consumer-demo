@@ -1,0 +1,28 @@
+{
+    "requestDataList": [
+        {
+            "@type": "rest",
+            "method": "GET",
+            "configKey": "getDemoUser",
+            "urlSuffix": "/123",
+            "body": null,
+            "httpHeader": {
+                "key1": "value1",
+                "key2": "value2",
+                "key3": "value3"
+            }
+        },
+        {
+            "@type": "customized-request",
+            "attribute1": "success",
+            "attribute2": "success",
+            "attribute3": "success"
+        },
+        {
+            "@type": "customized-request",
+            "attribute1": "failure",
+            "attribute2": "failure",
+            "attribute3": "failure"
+        }		
+    ]
+}

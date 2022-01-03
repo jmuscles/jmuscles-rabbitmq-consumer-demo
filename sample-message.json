@@ -1,0 +1,28 @@
+{
+    "requestDataList": [
+        {
+            "@type": "rest",
+            "method": "GET",
+            "configKey": "getDemoUser",
+            "urlSuffix": "/123",
+            "body": null,
+            "httpHeader": null
+        },
+        {
+            "@type": "demo",
+            "successAttempt": 5,
+            "data": "Demo for attempt 5"
+        },
+        {
+            "@type": "sql-query",
+            "params": {
+                "gender": "Male",
+                "user_id": "1",
+                "last_name": "Goel",
+                "first_name": "Manish",
+                "email": "a@a.com"
+            },
+            "configKey": "insert_user_testdb"
+        }
+    ]
+}
