@@ -44,4 +44,10 @@ public class CustomizedRequestData implements RequestData {
 		this.attribute3 = attribute3;
 	}
 
+	@Override
+	public String toString() {
+		return "CustomizedRequestData [attribute1=" + attribute1 + ", attribute2=" + attribute2 + ", attribute3="
+				+ attribute3 + "]";
+	}
+
 }
